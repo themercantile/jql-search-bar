@@ -1,31 +1,32 @@
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <title>jql-search-bar</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="./img/icon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
-    integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw=="
-    crossorigin="anonymous"></script> <!-- the previous code provides backwards compatability with older browsers -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>  
-</body>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JQL Made Easy - Jira Search Query</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  </head>
+  <body>
+    <h1>Select choices from the drop-down menus to build a search query for JQL. Click the copy button to copy to the clipboard.</h1>
+    <label for="choice">I would like to find the ticket:</label> 
+    <select name="choice" id="choice1">
+      <option value="reporter">reported by</option>
+      <option value="description">containing the text</option>
+      <option value="issuekey">with the issue key</option>
+    </select>
+    <input type="text" id="firstInput">
+    <select name="choice" id="choice2">
+      <option value="reporter">reported by</option>
+      <option value="description">containing the text</option>
+      <option value="issuekey">with the issue key</option>
+    </select>
+    <input type="text" id="secondInput">
+    <select name="choice" id="choice3">
+      <option value="reporter">reported by</option>
+      <option value="description">containing the text</option>
+      <option value="issuekey">with the issue key</option>
+    </select>
+    <input type="text" id="thirdInput">
+    <button>Copy</button>
+  </body>
 </html>
+
