@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <title>JQL Made Easy - Jira Search Query</title>
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
-        $("#choice1")
+        $("#choice1").change(function() {
+          getSelection()
+        })
+      })
+      function getSelection() {
+        var valueSelected = $("#choice1").val();
       }
     </script>
   </head>
