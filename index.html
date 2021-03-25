@@ -13,7 +13,8 @@
       })
       function getSelection() {
         var valueSelected = $("#choice1").val();
-      }
+        document.getElementById("choice1Out").innerHTML = valueSelected;
+      }      
     </script>
   </head>
   <body>
@@ -38,5 +39,7 @@
     </select>
     <input type="text" id="thirdInput">
     <button>Copy</button>
+    <!-- The paragraph below with the ID choice1Out will display the valueSelected variable in the getSelection function in the header -->
+    <p id="choice1Out"></p>
   </body>
 </html>
