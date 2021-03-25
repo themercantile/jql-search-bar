@@ -1,2 +1,6 @@
 [push]
 	default = simple
+[user]
+	themercantile = numbat
+[user "mercantile.code@gmail"]
+	com = mercantile.code@gmail.com
