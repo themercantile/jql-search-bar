@@ -1,13 +1,25 @@
-$(document).ready(function() {
-  $("#choice1").change(function() {
-    getSelection();
-  });
-});
-function getSelection() {
-  var value1Selected = $("#choice1").val();
-  var value2Selected = $("#choice2").val();
-  var value3Selected = $("#choice3").val();
-  document.getElementById("choice1Out").innerHTML = value1Selected;
-  document.getElementById("choice2Out").innerHTML = value2Selected;
-  document.getElementById("choice3Out").innerHTML = value3Selected;
+
+function setValueHtml(choiceId, inputId, outId) {
+  const choice = $(choiceId).val();
+  const input = $(inputId).val();
+  let operator = "=";
+  if (choice === "reporter") {
+    $(outId).html(`${choice} = ${input}`);
+  } else if (choice === "description") {
+    $(outId).html(`${choice} ~ "${input}"`);
+  }
 }
+
+function getSelection() {
+  setValueHtml('#choice1', '#firstInput', '#choice1Out');
+  // setValueHtml('choice2', 'choice2Out');
+  // setValueHtml('choice3', 'choice3Out');
+}
+
+function onDocumentReady() {
+  $("#choice1").change(getSelection);
+  $("#firstInput").keyup(getSelection);
+  getSelection();
+}
+
+$(document).ready(onDocumentReady);
