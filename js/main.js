@@ -2,7 +2,6 @@
 function setValueHtml(choiceId, inputId, outId) {
   const choice = $(choiceId).val();
   const input = $(inputId).val();
-  let operator = "=";
   if (choice === "reporter") {
     $(outId).html(`${choice} = ${input}`);
   } else if (choice === "description") {
