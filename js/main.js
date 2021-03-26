@@ -11,8 +11,8 @@ function setValueHtml(choiceId, inputId, outId) {
 
 function getSelection() {
   setValueHtml('#choice1', '#firstInput', '#choice1Out');
-  // setValueHtml('choice2', 'choice2Out');
-  // setValueHtml('choice3', 'choice3Out');
+  setValueHtml('#choice2', '#secondInput', '#choice2Out');
+  setValueHtml('#choice3', '#thirdInput', '#choice3Out');
 }
 
 function onDocumentReady() {
@@ -22,3 +22,10 @@ function onDocumentReady() {
 }
 
 $(document).ready(onDocumentReady);
+
+/* 
+Basic syntax is: $(selector).action()
+A $ sign to define / access jQuery
+A(selector) to "query (or find)" HTML elements
+A jQuery action() to be performed on the element(s) 
+*/
