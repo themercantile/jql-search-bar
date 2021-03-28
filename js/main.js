@@ -1,24 +1,44 @@
 
-function setValueHtml(choiceId, inputId, outId) {
-  const choice = $(choiceId).val();
-  const input = $(inputId).val();
-  if (choice === "reporter") {
-    $(outId).html(`${choice} = ${input}`);
-  } else if (choice === "description") {
-    $(outId).html(`${choice} ~ "${input}"`);
+function toOperator(word) {
+  switch(word) {
+    case "reporter":
+      return "reporter =";
+    case "description":
+      return "description ~";
   }
 }
 
-function getSelection() {
-  setValueHtml('#choice1', '#firstInput', '#choice1Out');
-  // setValueHtml('choice2', 'choice2Out');
-  // setValueHtml('choice3', 'choice3Out');
+function newExpression() {
+  $("#expressions").append($(".template").html());
+  $(".operator").change(renderJQL);
+  $(".value").keyup(renderJQL);
+  $(".joiner").change(renderJQL);
+  $(".expression:not(:last-child)").find(".joiner").show();
+  $(".expression:last-child").find(".joiner").hide();
+  // $(".joiner:not(:last-child)").show();
+  // $(".joiner:last-child").hide();
+  renderJQL();
+}
+
+function renderJQL() {
+  let newExpression = [];
+  $(".expression:not(:last-child)").each(function() {
+    const operator = $(this).find(".operator").val();
+    const value = $(this).find(".value").val();
+    const joiner = $(this).find(".joiner").val();
+    newExpression.push(`${toOperator(operator)} ${value} ${joiner}`);
+  });
+  const lastChild = $(".expression:last-child");
+  const operator = lastChild.find(".operator").val();
+  const value = lastChild.find(".value").val();
+  newExpression.push(`${toOperator(operator)} ${value}`);
+  $("#output").html(newExpression.join(" "));
+
 }
 
 function onDocumentReady() {
-  $("#choice1").change(getSelection);
-  $("#firstInput").keyup(getSelection);
-  getSelection();
+  $("#add").click(newExpression);
+  newExpression();
 }
 
 $(document).ready(onDocumentReady);
