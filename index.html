@@ -3,30 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <title>JQL Made Easy - Jira Search Query</title>
-  <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
-    <h1>Select choices from the drop-down menus to build a search query for JQL. Click the copy button to copy to the clipboard.</h1>
-    <label for="choice">I would like to find the ticket:</label> 
-    <select name="choice" id="choice1">
-      <option value="reporter">reported by</option>
-      <option value="description">containing the text</option>
-      <option value="issuekey">with the issue key</option>
-    </select>
-    <input type="text" id="firstInput">
-    <select name="choice" id="choice2">
-      <option value="reporter">reported by</option>
-      <option value="description">containing the text</option>
-      <option value="issuekey">with the issue key</option>
-    </select>
-    <input type="text" id="secondInput">
-    <select name="choice" id="choice3">
-      <option value="reporter">reported by</option>
-      <option value="description">containing the text</option>
-      <option value="issuekey">with the issue key</option>
-    </select>
-    <input type="text" id="thirdInput">
+
+    <div>
+      <h1>Select choices from the drop-down menus to build a search query for JQL. Click the copy button to copy to the clipboard.</h1>
+      <label>I would like to find the ticket:</label>
+      <button id="add">Add</button>
+      <div id="expressions"></div>
+    </div>
+
+    <script type="template" class="template">
+      <div class="expression">
+        <select name="choice" class="operator">
+          <option value="reporter">reported by</option>
+          <option value="description">containing the text</option>
+          <option value="issuekey">with the issue key</option>
+        </select>
+        <input type="text" class="value" value="example">
+        <select name="choice" class="joiner">
+          <option value="and">and</option>
+          <option value="or">or</option>
+        </select>
+      </div>
+    </script>
+
     <button>Copy</button>
+    <!-- The paragraph below with the ID choice1Out will display the valueSelected variable in the getSelection function in the header -->
+    <p id="output"></p>
   </body>
 </html>
-
