@@ -8,19 +8,20 @@ function toOperator(word) {
 }
 
 function newExpression() {
-  $("#expressions").append($(".template").html());
-  $(".operator").change(renderJQL);
-  $(".value").keyup(renderJQL);
-  $(".joiner").change(renderJQL);
-  $(".expression:not(:last-child)")
-    .find(".joiner")
-    .show();
-  $(".expression:last-child")
-    .find(".joiner")
-    .hide();
+  $("#expressions").append($(".template").html()); // item with ID "expressions" append item with the .html() within the class "template".
+  // In effect, the line above this one adds a snippet of html code defined by an item with the class of "template". It's activated by clicking the item with an ID of "add".
+  $(".operator").change(renderJQL); // if an item with the class "operator" changes,  load a reference to the function "renderJQL".
+  $(".value").keyup(renderJQL); // if a field with the class "value" detects that a key that was depressed is now on its way up, load a reference to the function "renderJQL".
+  $(".joiner").change(renderJQL); // if an item with the class "joiner" changes,  load a reference to the function "renderJQL".
+  $(".expression:not(:last-child)") // items with class "expression" that ARE NOT the last child.
+    .find(".joiner") // return descended elements of class "joiner"
+    .show(); // show the selected elements
+  $(".expression:last-child") // items  with class "expression" that ARE the last child.
+    .find(".joiner") // return descended elements of class "joiner"
+    .hide(); // hide the selected elements
   // $(".joiner:not(:last-child)").show();
   // $(".joiner:last-child").hide();
-  renderJQL();
+  renderJQL(); // function call to renderJQL - This will execute one of the references to renderJQL from above.
 }
 
 function renderJQL() {
@@ -49,8 +50,8 @@ function renderJQL() {
 // fields will be input.
 
 function onDocumentReady() {
-  $("#add").click(newExpression);
-  newExpression();
+  $("#add").click(newExpression); //HTML item with ID "add". On click, load a reference (no brackets) to the newExpression function.
+  newExpression(); //Call the function newExpression. I don't understand why we are placing a reference to this function in the line above.
 }
 
 $(document).ready(onDocumentReady);
