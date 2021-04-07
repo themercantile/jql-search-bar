@@ -60,23 +60,23 @@ $(document).ready(onDocumentReady);
 
 //English version of the field name
 var engField = {
-  "Assignee": "whose assignee ",
-  "Attachments": "whose attachment list ",
-  "Category": "with the category ",
-  "Comment": "which has a comment that ",
-  "Created": "created on ",
-  "Customer Request Type": "with a request type of ",
-  "Description": "whose description ",
-  "Due": "whose due date is ",
-  "Issue Key": "with an issue key ",
-  "Labels": "whose label ",
-  "Reporter": "whose reporter ",
-  "Resolved": "whose resolved date ",
-  "Status": "whose status ",
-  "Summary": "whose summary ",
-  "Text": "which has a text that ",
-  "Type": "whose issue type "
-};
+  "whose assignee ": { "Assignee": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "whose attachment list ": { "Attachments": ["IS", "IS NOT"] },
+  "with the category ": { "Category": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "which has a comment that ": { "Comment": ["~", "!~"] },
+  "created on ": { "Created": ["=", "!=", ">", ">=", "<", "<=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "with a request type of ": { "Customer Request Type": ["=", "!=", "IN", "NOT IN"] },
+  "whose description ": { "Description": ["~", "!~", "IS", "IS NOT"] },
+  "whose due date is ": { "Due": ["=", "!=", ">", ">=", "<", "<=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "with an issue key ": { "Issue Key": ["=", "!=", ">", ">=", "<", "<=", "IN", "NOT IN"] },
+  "whose label ": { "Labels": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "whose reporter ": { "Reporter": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "whose resolved date ": { "Resolved": ["=", "!=", ">", ">=", "<", "<=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "whose status ": { "Status": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] },
+  "whose summary ": { "Summary": ["~", "!~", "IS", "IS NOT"] },
+  "which has a text that ": { "Text": ["~", "!~"] },
+  "whose issue type ": { "Type": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] }
+}
 
 //English version of the operators
 var engOperator = {
